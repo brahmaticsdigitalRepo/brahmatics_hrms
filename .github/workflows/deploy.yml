@@ -1,0 +1,36 @@
+name: deploy hrms
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      #checkout the repo
+      - name: checkout code
+        uses: actions/checkout@v3
+        
+      #setup node js
+      - name: setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      #install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      #build project
+      - name: Build Project
+        run: npm run build
+        
+      #Deploy to Github pages
+      - name: Deploy to github pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          publish_dir: dist

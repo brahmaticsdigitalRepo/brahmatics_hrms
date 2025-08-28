@@ -15,4 +15,9 @@ export default defineConfig({
       },
     }),
   ],
+  base: "/brahmatics_hrms/",
+  server: {
+    open: true,
+    port: 3001,
+  },
 });
