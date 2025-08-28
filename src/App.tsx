@@ -26,7 +26,7 @@ export default function App() {
       <Router>
         <ScrollToTop />
         <Routes>
-          {/* Dashboard Layout */}
+          {/* Dashboard Layout  */}
           <Route
             element={
               <Wrapper>
