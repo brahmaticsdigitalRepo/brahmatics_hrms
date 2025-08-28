@@ -1,6 +1,7 @@
 name: deploy hrms
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
